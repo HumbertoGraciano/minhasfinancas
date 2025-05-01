@@ -1,2 +1,37 @@
-package com.example.minhasfinancas.model.entity;public class Usuario {
+package com.example.minhasfinancas.model.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/* import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType; */
+import java.util.Objects;
+
+@Entity
+@Table(name ="usuario", schema = "financas")
+@Builder
+@Data
+public class Usuario {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "nome")
+    private String nome;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "senha")
+    private String senha;
+
 }
